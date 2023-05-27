@@ -51,6 +51,27 @@ def predic(file):
 def index():
     return render_template('index.html')
 
+@app.route("/catalogo")
+def catalogo():
+    return render_template("catalogo.html")
+
+@app.route("/ayuda")
+def ayuda():
+    return render_template("ayuda.html")
+
+@app.route("/save",methods=['GET','POST'])
+def save():
+    if request.method == "POST":
+        file = request.files['audio_data']
+        if file.filename == '' or file is None:
+            flash('No selected file')
+            return redirect(request.url)
+        else:
+            file.save(file.save(os.path.join(APP_ROOT,app.config['UPLOAD_FOLDER'],"tmp.wav")))
+        return render_template('index.html', request="POST")
+    else:
+         return render_template("index.html")
+
 @app.route('/spec', methods = ['GET', 'POST'])
 def spec():
     if request.method == 'POST':
