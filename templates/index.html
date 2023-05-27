@@ -7,8 +7,23 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity=
     "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css) }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Reconocimiento de Aves por medio del sonido</title>
     <!-- As a link -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <a class="navbar-brand mx-left" href="{{ url_for('index') }}"><h1 class="px-3">OVEX</h1></a>
+        <div class="">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link px-3 active" href="{{ url_for('catalogo') }}">Catalogo de aves</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 active" href="{{ url_for('ayuda') }}">Ayuda</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </head>
 <body>
     <h1 class="text-center">Identificación de aves</h1>
@@ -24,6 +39,15 @@
             <h4><i id="nombreIMG" class=""><span> Acanthidops bairdi - Pinzón piquiagudo </span></i></h4>
             <h5><i id="estado"><span> </span></i></h5>
         </div>
+        <button onclick="changeImage()" type="button" class="btn btn-success rounded-pill btn-lg"> <-- </button>
+        <button onclick="changeImage1()" type="button" class="btn btn-success rounded-pill btn-lg"> --> </button>
     </div>
+    
+    <div class="text-center">
+    </div>
+    <h3 id="bird_name"><span> </span></h3>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='uploads/main.json') }}"></script>
 </body>
 </html>
