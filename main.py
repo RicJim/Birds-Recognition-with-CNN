@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 
 import numpy as np
 import librosa as lb
@@ -15,7 +15,8 @@ NFFT = 1024 #SIZE FFT
 HOPL = 320 #Step between windows
 out = ruta + '/tmp.npy'
 
-
+#File Upload
+APP_ROOT = os.path.abspath(os.path.dirname(__file__))
 label = ["Acanthidops bairdi - Pinzón piquiagudo","Amazona Auropalliata - Nuca amarilla","Amazona Oratrix - Loro rey","Ara ambiguus - Guacamaya verde",
         "Chlorophonia callophrys - Fruterito de cejas doradas","Harpia harpyja - Águila arpía","Laterallus Jamaicensis - Burrito cuyano",
         "Myadestes melanops - Solitario carinegro","Pharopmachrus mocinno - Quetzal","Poliocrania exsul - Hormiguero dorsicastaño",
@@ -51,15 +52,15 @@ def predic(file):
 def index():
     return render_template('index.html')
 
-@app.route("/catalogo")
+@app.route('/catalogo')
 def catalogo():
-    return render_template("catalogo.html")
+    return render_template('catalogo.html')
 
-@app.route("/ayuda")
+@app.route('/ayuda')
 def ayuda():
-    return render_template("ayuda.html")
+    return render_template('ayuda.html')
 
-@app.route("/save",methods=['GET','POST'])
+@app.route('/save',methods=['GET','POST'])
 def save():
     if request.method == "POST":
         file = request.files['audio_data']
