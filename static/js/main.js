@@ -11,7 +11,7 @@ let btnrecord = document.getElementById("record");
 let btnpredic = document.getElementById("predic");
 
 btnrecord.addEventListener("click", recording);
-btnpredic.addEventListener("click", prediction);
+btnpredic.addEventListener("click", spectogramConvert);
 
 function recording(){
     const constraints = { audio:true, video:false }
@@ -64,11 +64,6 @@ function createDownloadLink(blob){
 
     up.addEventListener("click",function(event){
         var xhr=new XMLHttpRequest();
-        xhr.onload=function(e){
-            if(this.readyState === 4){
-                console.log("Server returned: ",e.target.responseText);
-            }
-        };
         let fd = new FormData();
         fd.append("audio_data",blob,filename);
         xhr.open("POST","/save",true);
@@ -81,7 +76,7 @@ function createDownloadLink(blob){
     recordingsList.appendChild(li);
 }
 
-function prediction(){
+function spectogramConvert(){
     //btnpredic.disabled = true;
     jQuery.ajax({
         type: 'POST',
@@ -90,7 +85,7 @@ function prediction(){
         cache: false,
         processData: false,
         async: true,
-        success: function (birdID) {
+        success: function (response) {
             //Get and display the result
             btnrecord.disabled = false;
             birdName = birdID;
@@ -145,7 +140,7 @@ function birdIMG(birdName){
         image.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200";
     }
     imageName.innerHTML = birdName;
-}
+}           
 
 function changeImage(){
     if(image.src.match("47233731")){
@@ -170,9 +165,9 @@ function changeImage(){
         image.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/480560721/";
         imageName.innerHTML = label[6];
     } else if(image.src.match("480560721")){
-        image.src = "https://cdn1.matadornetwork.com/blogs/2/2019/01/aguila-arpia.jpg";
+        image.src = "https://images.pexels.com/photos/14483410/pexels-photo-14483410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
         imageName.innerHTML = label[5];
-    } else if(image.src.match("aguila-arpia")){
+    } else if(image.src.match("14483410")){
         image.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/243972201/1200";
         imageName.innerHTML = label[4];
     } else if(image.src.match("243972201")){
@@ -207,9 +202,9 @@ function changeImage1(){
         image.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/243972201/1200";
         imageName.innerHTML = label[4];
     } else if(image.src.match("243972201")){
-        image.src = "https://cdn1.matadornetwork.com/blogs/2/2019/01/aguila-arpia.jpg";
+        image.src = "https://images.pexels.com/photos/14483410/pexels-photo-14483410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
         imageName.innerHTML = label[5];
-    } else if(image.src.match("aguila-arpia")) {
+    } else if(image.src.match("14483410")) {
         image.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/480560721/";
         imageName.innerHTML = label[6];
     } else if (image.src.match("480560721")){
