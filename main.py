@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, jsonify
 
 import numpy as np
-from keras.models import model_from_json
+#from keras.models import model_from_json
 import librosa as lb
 import os
 
@@ -19,10 +19,11 @@ out = ruta + '/tmp.npy'
 
 #File Upload
 APP_ROOT = os.path.abspath(os.path.dirname(__file__))
-label = ["Acanthidops bairdi - Pinzón piquiagudo","Amazona Auropalliata - Nuca amarilla","Amazona Oratrix - Loro rey","Ara ambiguus - Guacamaya verde",
-        "Chlorophonia callophrys - Fruterito de cejas doradas","Harpia harpyja - Águila arpía","Laterallus Jamaicensis - Burrito cuyano",
-        "Myadestes melanops - Solitario carinegro","Pharopmachrus mocinno - Quetzal","Poliocrania exsul - Hormiguero dorsicastaño",
-        "Pyrrhura picta eisenmanni - Perico carato","Setophaga chrysoparia - Reinita caridorada","Spizaetus ornatus - Aguilillo adornado"]
+label = ["Acanthidops bairdi - Pinzón piquiagudo","Amazona Auropalliata - Nuca amarilla",
+"Amazona Oratrix - Loro rey","Ara ambiguus - Guacamaya verde","Chlorophonia callophrys - Fruterito de cejas doradas",
+"Harpia harpyja - Águila arpía","Laterallus Jamaicensis - Burrito cuyano","Pitangus sulphuratus - Bienteveo Grande",
+"Pyrrhura picta eisenmanni - Perico carato","Ramphocelus dimidiatus - tangara dorsirroja","Setophaga chrysoparia - Reinita caridorada",
+"Thraupis episcopus - Tangara Azuleja","Troglodytes aedon - Sotorrey comun","Turdus grayi - zorzal pardo"]
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -30,13 +31,13 @@ app.config['UPLOAD_FOLDER'] = ruta
 
 model = None
 #Load Model
-def load_model():
-    json_file = open('app/model/model.json','r')
-    model_json = json_file.read()
-    json_file.close()
-    global model
-    model = model_from_json(model_json)
-    model.load_weights("app/model/model.h5")
+#def load_model():
+    #json_file = open('app/model/model.json','r')
+    #model_json = json_file.read()
+    #json_file.close()
+    #global model
+    #model = model_from_json(model_json)
+    #model.load_weights("app/model/model.h5")
 
 @app.route('/')
 def index():
@@ -111,5 +112,5 @@ def spec():
     return None
 
 if __name__ == '__main__':
-    load_model()
+    #load_model()
     app.run(debug=True, port=os.getenv("PORT", default=5000))

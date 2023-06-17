@@ -37,17 +37,17 @@
         },
         {
             "id": 7,
-            "Title": "Myadestes melanops - Solitario carinegro",
+            "Title": "Pitangus sulphuratus - Bienteveo Grande",
             "Poster": "https://lh4.ggpht.com/d7FLvfHHlVscO-nCsvIpLYtTZewrn-QgseBIGa5xz-qvY4xqmDRU4EwSJEB2yFxv-1bQD5xqHuOnDLBM1XUC=s600"
         },
         {
             "id": 8,
-            "Title": "Pharopmachrus mocinno - Quetzal",
-            "Poster": "https://estaticos-cdn.elperiodico.com/clip/3424569b-4f02-4186-8bcc-ac218d277b31_alta-libre-aspect-ratio_default_0.jpg"
+            "Title": "Pyrrhura picta eisenmanni - Perico carato",
+            "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/98/Azuero_Parakeet.jpg"
         },
         {
             "id": 9,
-            "Title": "Pyrrhura picta eisenmanni - Perico carato",
+            "Title": "Ramphocelus dimidiatus - tangara dorsirroja",
             "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/98/Azuero_Parakeet.jpg"
         },
         {
@@ -57,7 +57,17 @@
         },
         {
             "id": 11,
-            "Title": "Spizaetus ornatus - Aguilillo adornado",
+            "Title": "Thraupis episcopus - Tangara Azuleja",
+            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200"
+        },
+        {
+            "id": 12,
+            "Title": "Troglodytes aedon - Sotorrey comun",
+            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200"
+        },
+        {
+            "id": 13,
+            "Title": "Turdus grayi - zorzal pardo",
             "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200"
         }
     ]    

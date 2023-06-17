@@ -36,19 +36,18 @@
         </div>
         <ol class="py-3 align-content-center" id="recordingsList"></ol>
         <h2 class="">Catalogo de aves</h2>
-        <img id="imagen" width="400" height="350" src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/47233731/1200"; class="rounded">
+        <img id="image" width="400" height="350" src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/47233731/1200"; class="rounded">
         <div class="text-center">
-            <h4><i id="nombreIMG" class=""><span> Acanthidops bairdi - Pinzón piquiagudo </span></i></h4>
+            <h4><i id="imageName" class=""><span> Acanthidops bairdi - Pinzón piquiagudo </span></i></h4>
             <h5><i id="estado"><span> </span></i></h5>
         </div>
-        <button onclick="changeImage()" type="button" class="btn btn-success rounded-pill btn-lg"> <-- </button>
-        <button onclick="changeImage1()" type="button" class="btn btn-success rounded-pill btn-lg"> --> </button>
+        <button onclick="changeImage('backward')" type="button" class="btn btn-success rounded-pill btn-lg"> <-- </button>
+        <button onclick="changeImage('forward')" type="button" class="btn btn-success rounded-pill btn-lg"> --> </button>
     </div>
     <div class="text-center">
     </div>
     <h3 id="bird_name"><span> </span></h3>
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='uploads/main.json') }}"></script>
 </body>
 </html>
