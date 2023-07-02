@@ -1,53 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity=
-    "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-    <!-- Cargar TensorFlow, numpy-parser, fs, JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Reconocimiento de Aves por medio del sonido</title>
-    <!-- As a link -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <a class="navbar-brand mx-left" href="{{ url_for('index') }}"><h1 class="px-3">OVEX</h1></a>
-        <div class="">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link px-3 active" href="{{ url_for('catalogo') }}">Catalogo de aves</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 active" href="{{ url_for('ayuda') }}">Ayuda</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</head>
-<body>
+<!-- index.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Reconocimiento de trinos de aves
+{% endblock %}
+
+{% block content %}
     <h1 class="text-center">Identificación de aves</h1>
-    <div class="text-center">
-        <div class="d-grid gap-2 col-md-3 col-lg-3 col-sm-3 mx-auto" id="controls">
-            <button id="record" class="btn btn-warning btn-outline-dark btn-lg btn-block">Iniciar Grabacion</button>
-            <button id="predic" class="btn btn-success btn-outline-dark btn-lg btn-block" disabled="true">Identificar</button>
+    <div class="container mt-4">
+        <div class="row text-center">
+            <div class="d-grid gap-2 col-md-6 col-lg-3 col-sm-12 mx-auto" id="controls">
+                <h4>Operaciones</h4>
+                <button id="record" class="btn btn-warning btn-outline-dark btn-lg btn-block">Iniciar Grabacion</button>
+                <button id="predic" class="btn btn-success btn-outline-dark btn-lg btn-block" disabled="true">Identificar</button>
+            </div>
+            <div class="d-grid gap-2 col-md-6 col-lg-3 col-sm-12 mx-auto">
+                <h4>Audios grabados</h4>
+                <ol class="py-3 align-content-center" id="recordingsList"></ol>
+            </div>
         </div>
-        <ol class="py-3 align-content-center" id="recordingsList"></ol>
-        <h2 class="">Catalogo de aves</h2>
-        <img id="image" width="400" height="350" src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/47233731/1200"; class="rounded">
+
+        <h2 class="text-center mt-4">Catalogo de aves</h2>
+
+        <div class="aspect-ratio-container d-flex align-content-center justify-content-center rounded">
+            <img id="image" width="400" class="img-fluid rounded" src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/47233731/1200">
+        </div>
         <div class="text-center">
             <h4><i id="imageName" class=""><span> Acanthidops bairdi - Pinzón piquiagudo </span></i></h4>
             <h5><i id="estado"><span> </span></i></h5>
         </div>
-        <button onclick="changeImage('backward')" type="button" class="btn btn-success rounded-pill btn-lg"> <-- </button>
-        <button onclick="changeImage('forward')" type="button" class="btn btn-success rounded-pill btn-lg"> --> </button>
-    </div>
-    <div class="text-center">
+        <div class="text-center my-3">
+            <button onclick="changeImage('backward')" type="button" class="btn btn-success rounded-pill btn-lg px-4 py-2">
+                <i class="bi bi-arrow-left"></i> Anterior
+            </button>
+            <button onclick="changeImage('forward')" type="button" class="btn btn-success rounded-pill btn-lg px-4 py-2">
+                Siguiente <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
     </div>
     <h3 id="bird_name"><span> </span></h3>
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-</html>
+{% endblock %}

@@ -12,7 +12,7 @@ file_path = ruta + '/tmp.wav'
 
 #Mel Spectogram parameters
 RATE = 44100
-NFFT = 20248 #SIZE FFT
+NFFT = 2048 #SIZE FFT
 HOPL = 320 #Step between windows
 MEL = 128
 out = ruta + '/tmp.npy'
@@ -84,25 +84,17 @@ def spec():
         resized_Mel_spect_db = resized_Mel_spect_db.resize((128,128),resample=Image.BILINEAR)
 
         #Convertir la imagen redimensionada a matriz nuevamente
-        resized_Mel_spect_db = np.array(resized_Mel_spect_db)
+        data_mel = np.array(resized_Mel_spect_db)
 
-        #Obtener nombre del archivo
-        file_name = os.path.basename(audio).split('.')[0]
-
-        #guardar archivo '.npy'
-        np.save(out, resized_Mel_spect_db)
-
-        #Preprocess
-        load_npy = np.load(out)
-        load_npy = np.expand_dims(load_npy, axis=-1)
-        load_npy = np.expand_dims(load_npy, axis=0)
-        load_npy = load_npy/255.0
+        data_mel = np.expand_dims(data_mel, axis=-1)
+        data_mel = np.expand_dims(data_mel, axis=0)
+        data_mel = data_mel/255.0
         
         #Predic
-        array = modelo.predict(load_npy)
+        array = modelo.predict(data_mel)
         resultado = np.round(array*100)
         
-        if resultado > 60:
+        if resultado > 50:
             birdID = str(label[int(respuesta)])
         else:
             birdID = 'Desconocido'

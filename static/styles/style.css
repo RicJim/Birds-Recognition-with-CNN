@@ -1,0 +1,65 @@
+body {
+    background-color: #B2DFDB;
+    color: black;
+}
+    
+
+/*Estilos para el Navbar*/
+.navbar-gradient {
+    background: linear-gradient(135deg, #00695C, #228B22);
+    color: black;
+}
+
+.list-group-item {
+    background-color: #A5D6A7;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.list-group-item:hover {
+    background-image: linear-gradient(135deg, #FFFFFF, #B2DFDB);
+}
+
+/*Responsive Design*/
+.aspect-ratio-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporción 16:9 */
+    overflow: hidden;
+}
+
+.aspect-ratio-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .aspect-ratio-container {
+        padding-top: 0;
+        width: 400px;
+        height: 300px; /* Tamaño moderado para computadoras */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aspect-ratio-container img {
+        position: static;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+/* Estilos para footer */
+.footer {
+    background: linear-gradient(135deg, #FFFFFF, #00695C);
+    color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
