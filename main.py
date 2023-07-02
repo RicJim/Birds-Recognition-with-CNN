@@ -19,11 +19,13 @@ out = ruta + '/tmp.npy'
 
 #File Upload
 APP_ROOT = os.path.abspath(os.path.dirname(__file__))
-label = ["Acanthidops bairdi - Pinzón piquiagudo","Amazona Auropalliata - Nuca amarilla",
-"Amazona Oratrix - Loro rey","Ara ambiguus - Guacamaya verde","Chlorophonia callophrys - Fruterito de cejas doradas",
-"Harpia harpyja - Águila arpía","Laterallus Jamaicensis - Burrito cuyano","Pitangus sulphuratus - Bienteveo Grande",
-"Pyrrhura picta eisenmanni - Perico carato","Ramphocelus dimidiatus - tangara dorsirroja","Setophaga chrysoparia - Reinita caridorada",
-"Thraupis episcopus - Tangara Azuleja","Troglodytes aedon - Sotorrey comun","Turdus grayi - zorzal pardo"]
+label = [
+    "Actitis macularius - Playero coleador", "Amazona Oratrix - Loro rey", "Brotogeris jugularis - Perico barbinaranja",
+    "Columba livia - Paloma domestica", "Crotophaga ani - Garrapatero piquiliso", "Harpia harpyja - Águila arpía",
+    "Laterallus Jamaicensis - Burrito cuyano", "Pandion haliaetus - Águila pescadora", "Pitangus sulphuratus - Bienteveo Grande",
+    "Ramphocelus dimidiatus - tangara dorsirroja", "Thraupis episcopus - Tangara Azuleja", "Todirostrum cinereum - Espatulilla común",
+    "Troglodytes aedon - Sotorrey comun", "Turdus grayi - zorzal pardo",
+]
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -91,15 +93,15 @@ def spec():
         data_mel = data_mel/255.0
         
         #Predic
-        array = modelo.predict(data_mel)
-        resultado = np.round(array*100)
+        #array = modelo.predict(data_mel)
+        #resultado = np.round(array*100)
         
-        if resultado > 50:
-            birdID = str(label[int(respuesta)])
-        else:
-            birdID = 'Desconocido'
+        #if resultado > 50:
+        #    birdID = str(label[int(respuesta)])
+        #else:
+        #    birdID = 'Desconocido'
 
-        return birdID
+        #return birdID
     #Mel Spectrogram
     return None
 

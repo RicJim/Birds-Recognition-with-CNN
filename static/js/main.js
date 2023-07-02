@@ -95,18 +95,18 @@ function spectogramConvert() {
 }
 
 let label = [
-    "Acanthidops bairdi - Pinzón piquiagudo",
-    "Amazona Auropalliata - Nuca amarilla",
+    "Actitis macularius - Playero coleador",
     "Amazona Oratrix - Loro rey",
-    "Ara ambiguus - Guacamaya verde",
-    "Chlorophonia callophrys - Fruterito de cejas doradas",
+    "Brotogeris jugularis - Perico barbinaranja",
+    "Columba livia - Paloma domestica",
+    "Crotophaga ani - Garrapatero piquiliso",
     "Harpia harpyja - Águila arpía",
     "Laterallus Jamaicensis - Burrito cuyano",
+    "Pandion haliaetus - Águila pescadora",
     "Pitangus sulphuratus - Bienteveo Grande",
-    "Pyrrhura picta eisenmanni - Perico carato",
     "Ramphocelus dimidiatus - tangara dorsirroja",
-    "Setophaga chrysoparia - Reinita caridorada",
     "Thraupis episcopus - Tangara Azuleja",
+    "Todirostrum cinereum - Espatulilla común",
     "Troglodytes aedon - Sotorrey comun",
     "Turdus grayi - zorzal pardo",
 ];
