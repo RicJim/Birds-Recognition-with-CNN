@@ -4,6 +4,7 @@ import numpy as np
 #from keras.models import model_from_json
 import librosa as lb
 import os
+from PIL import Image
 
 ruta = 'static/uploads'
 
@@ -16,6 +17,7 @@ NFFT = 2048 #SIZE FFT
 HOPL = 320 #Step between windows
 MEL = 128
 out = ruta + '/tmp.npy'
+out2 = ruta + '/tmp.png'
 
 #File Upload
 APP_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -76,7 +78,7 @@ def spec():
         audio_mono = lb.to_mono(y)
 
         #Audio to Spectogram
-        Mel_Spect = lb.feature.melspectrogram(y=audio_mono, sr=sr, n_mel=MEL, n_fft=NFFT, hop_length=HOPL, win_length=NFFT)
+        Mel_Spect = lb.feature.melspectrogram(y=audio_mono, sr=sr, n_mels=MEL, n_fft=NFFT, hop_length=HOPL, win_length=NFFT)
 
         #Mel Spectogram
         Mel_spect_db = lb.power_to_db(Mel_Spect, ref=np.max)
@@ -91,6 +93,15 @@ def spec():
         data_mel = np.expand_dims(data_mel, axis=-1)
         data_mel = np.expand_dims(data_mel, axis=0)
         data_mel = data_mel/255.0
+
+        #Guardar como imagen
+        min_val = np.min(resized_Mel_spect_db)
+        max_val = np.max(resized_Mel_spect_db)
+        resized_Mel_spect_db = (resized_Mel_spect_db - min_val) / (max_val - min_val) * 255
+        resized_Mel_spect_db = resized_Mel_spect_db.astype(np.uint8)
+
+        image = Image.fromarray(resized_Mel_spect_db).convert('L')
+        image.save(out2)  
         
         #Predic
         #array = modelo.predict(data_mel)
