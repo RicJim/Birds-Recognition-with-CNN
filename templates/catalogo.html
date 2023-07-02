@@ -5,5 +5,16 @@
 {% endblock %}
 
 {% block content %}
+    <div id="image-gallery" class="row">
+    </div>
 
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <h2 id="overlay-title"></h2>
+            <img id="overlay-image" alt="Imagen">
+        </div>
+    </div>
+      
+  
+    <script src="{{ url_for('static', filename='js/birdsgallery.js') }}"></script>
 {% endblock %}
