@@ -2,87 +2,87 @@
     "birds":[
         {
             "id": 0,
-            "Name": "Pinzón piquiagudo",
-            "Title": "Acanthidops bairdi - Pinzón piquiagudo",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/47233731/1200"
+            "Name": "Playero coleador",
+            "Title": "Actitis macularius - Playero coleador",
+            "Poster": "https://observation.org/media/photo/7435610.jpg"
         },
         {
             "id": 1,
-            "Name": "Nuca amarilla",
-            "Title": "Amazona Auropalliata - Nuca amarilla",
-            "Poster": "https://www.barrameda.com.ar/wp-content/uploads/2019/12/lora-nuca-amarilla.jpg"
-        },
-        {
-            "id": 2,
             "Name": "Loro rey",
             "Title": "Amazona Oratrix - Loro rey",
             "Poster": "https://avesexoticas.org/wp-content/uploads/2017/10/Loro-Baceza-Amarilla-Amazona-oratrix-1024x680.jpg"
         },
         {
+            "id": 2,
+            "Name": "Perico barbinaranja",
+            "Title": "Brotogeris jugularis - Perico barbinaranja",
+            "Poster": "https://live.staticflickr.com/65535/50259360443_2af4184cfe_b.jpg"
+        },
+        {
             "id": 3,
-            "Name": "Guacamaya verde",
-            "Title": "Ara ambiguus - Guacamaya verde",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/245390831/1200"
+            "Name": "Paloma domestica",
+            "Title": "Columba livia - Paloma domestica",
+            "Poster": "https://static.inaturalist.org/photos/153453195/large.jpg"
         },
         {
             "id": 4,
-            "Name": "Fruterito de cejas doradas",
-            "Title": "Chlorophonia callophrys - Fruterito de cejas doradas",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/243972201/1200"
+            "Name": "Garrapatero piquiliso",
+            "Title": "Crotophaga ani - Garrapatero piquiliso",
+            "Poster": "https://live.staticflickr.com/754/22166522421_f4798d8fef_b.jpg"
         },
         {
             "id": 5,
             "Name": "Águila arpía",
             "Title": "Harpia harpyja - Águila arpía",
-            "Poster": "https://cdn1.matadornetwork.com/blogs/2/2019/01/aguila-arpia.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2018/06/06/13/46/harpy-3457952_960_720.jpg"
         },
         {
             "id": 6,
             "Name": "Burrito cuyano",
             "Title": "Laterallus Jamaicensis - Burrito cuyano",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/480560721/"
+            "Poster": "https://live.staticflickr.com/8456/8057403223_6eee4762b3_b.jpg"
         },
         {
             "id": 7,
-            "Name": "Bienteveo Grande",
-            "Title": "Pitangus sulphuratus - Bienteveo Grande",
-            "Poster": "https://lh4.ggpht.com/d7FLvfHHlVscO-nCsvIpLYtTZewrn-QgseBIGa5xz-qvY4xqmDRU4EwSJEB2yFxv-1bQD5xqHuOnDLBM1XUC=s600"
+            "Name": "Águila pescadora",
+            "Title": "Pandion haliaetus - Águila pescadora",
+            "Poster": "https://cdn.pixabay.com/photo/2012/11/28/13/53/osprey-67786_1280.jpg"
         },
         {
             "id": 8,
-            "Name": "Perico carato",
-            "Title": "Pyrrhura picta eisenmanni - Perico carato",
-            "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/98/Azuero_Parakeet.jpg"
+            "Name": "Bienteveo Grande",
+            "Title": "Pitangus sulphuratus - Bienteveo grande",
+            "Poster": "https://cdn.pixabay.com/photo/2023/01/21/05/07/bird-7733009_1280.jpg"
         },
         {
             "id": 9,
             "Name": "Tangara dorsirroja",
             "Title": "Ramphocelus dimidiatus - Tangara dorsirroja",
-            "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/98/Azuero_Parakeet.jpg"
+            "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/99/Crimson-backed_Tanager_-_Panama_H8O8413_%2822954596730%29.jpg"
         },
         {
             "id": 10,
-            "Name": "Reinita caridorada",
-            "Title": "Setophaga chrysoparia - Reinita caridorada",
-            "Poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Dendroica_chrysoparia1.jpg/1200px-Dendroica_chrysoparia1.jpg"
+            "Name": "Tangara azuleja",
+            "Title": "Thraupis episcopus - Tangara azuleja",
+            "Poster": "https://cdn.pixabay.com/photo/2023/02/15/04/15/bird-7790884_1280.jpg"
         },
         {
             "id": 11,
-            "Name": "Tangara Azuleja",
-            "Title": "Thraupis episcopus - Tangara Azuleja",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200"
+            "Name": "Espatulilla común",
+            "Title": "Todirostrum cinereum - Espatulilla común",
+            "Poster": "https://i0.wp.com/birdscolombia.com/wp-content/uploads/2017/02/todirostrum-cinereum11.jpg?resize=1180%2C787&ssl=1"
         },
         {
             "id": 12,
-            "Name": "Sotorrey comun",
-            "Title": "Troglodytes aedon - Sotorrey comun",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200"
+            "Name": "Sotorrey común",
+            "Title": "Troglodytes aedon - Sotorrey común",
+            "Poster": "https://cdn.pixabay.com/photo/2019/06/29/22/08/troglodytes-aedon-4306988_1280.jpg"
         },
         {
             "id": 13,
-            "Name": "zorzal pardo",
-            "Title": "Turdus grayi - zorzal pardo",
-            "Poster": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/326175571/1200"
+            "Name": "Zorzal pardo",
+            "Title": "Turdus grayi - Zorzal pardo",
+            "Poster": "https://inaturalist-open-data.s3.amazonaws.com/photos/109441828/large.jpeg"
         }
     ]    
 }

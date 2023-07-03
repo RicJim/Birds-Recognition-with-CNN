@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, jsonify
 
 import numpy as np
-#from keras.models import model_from_json
+from keras.models import model_from_json
 import librosa as lb
 import os
 from PIL import Image
@@ -21,13 +21,11 @@ out2 = ruta + '/tmp.png'
 
 #File Upload
 APP_ROOT = os.path.abspath(os.path.dirname(__file__))
-label = [
-    "Actitis macularius - Playero coleador", "Amazona Oratrix - Loro rey", "Brotogeris jugularis - Perico barbinaranja",
+label = ["Actitis macularius - Playero coleador", "Amazona Oratrix - Loro rey", "Brotogeris jugularis - Perico barbinaranja",
     "Columba livia - Paloma domestica", "Crotophaga ani - Garrapatero piquiliso", "Harpia harpyja - Águila arpía",
-    "Laterallus Jamaicensis - Burrito cuyano", "Pandion haliaetus - Águila pescadora", "Pitangus sulphuratus - Bienteveo Grande",
-    "Ramphocelus dimidiatus - tangara dorsirroja", "Thraupis episcopus - Tangara Azuleja", "Todirostrum cinereum - Espatulilla común",
-    "Troglodytes aedon - Sotorrey comun", "Turdus grayi - zorzal pardo",
-]
+    "Laterallus Jamaicensis - Burrito cuyano", "Pandion haliaetus - Águila pescadora", "Pitangus sulphuratus - Bienteveo grande",
+    "Ramphocelus dimidiatus - Tangara dorsirroja", "Thraupis episcopus - Tangara azuleja", "Todirostrum cinereum - Espatulilla común",
+    "Troglodytes aedon - Sotorrey común", "Turdus grayi - Zorzal pardo"]
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -35,13 +33,13 @@ app.config['UPLOAD_FOLDER'] = ruta
 
 model = None
 #Load Model
-#def load_model():
-    #json_file = open('app/model/model.json','r')
-    #model_json = json_file.read()
-    #json_file.close()
-    #global model
-    #model = model_from_json(model_json)
-    #model.load_weights("app/model/model.h5")
+def load_model():
+    json_file = open('models/model.json','r')
+    model_json = json_file.read()
+    json_file.close()
+    global model
+    model = model_from_json(model_json)
+    model.load_weights("models/modelW.h5")
 
 @app.route('/')
 def index():
@@ -95,27 +93,30 @@ def spec():
         data_mel = data_mel/255.0
 
         #Guardar como imagen
-        min_val = np.min(resized_Mel_spect_db)
-        max_val = np.max(resized_Mel_spect_db)
-        resized_Mel_spect_db = (resized_Mel_spect_db - min_val) / (max_val - min_val) * 255
-        resized_Mel_spect_db = resized_Mel_spect_db.astype(np.uint8)
+        #min_val = np.min(resized_Mel_spect_db)
+        #max_val = np.max(resized_Mel_spect_db)
+        #resized_Mel_spect_db = (resized_Mel_spect_db - min_val) / (max_val - min_val) * 255
+        #resized_Mel_spect_db = resized_Mel_spect_db.astype(np.uint8)
 
-        image = Image.fromarray(resized_Mel_spect_db).convert('L')
-        image.save(out2)  
+        #image = ImageOps.invert(Image.fromarray(resized_Mel_spect_db)).convert('L')
+        #image.save(out2)  
         
         #Predic
-        #array = modelo.predict(data_mel)
-        #resultado = np.round(array*100)
+        array = model.predict(data_mel)
+        resultado = np.round(array*100)
+        max_resultado = np.max(resultado)
         
-        #if resultado > 50:
-        #    birdID = str(label[int(respuesta)])
-        #else:
-        #    birdID = 'Desconocido'
+        if max_resultado > 50:
+            birdID = np.argmax(resultado)
+            print(birdID)
+            birdName = label[birdID]
+        else:
+            birdName = 'Desconocido'
 
-        #return birdID
+        return birdName
     #Mel Spectrogram
     return None
 
 if __name__ == '__main__':
-    #load_model()
+    load_model()
     app.run(debug=True, port=os.getenv("PORT", default=5000))
