@@ -53,7 +53,7 @@ def catalogo():
 def ayuda():
     return render_template('ayuda.html')
 
-@app.route('/save',methods=['POST'])
+@app.route('/save', methods=['POST'])
 def save():
     if request.method == "POST":
         file = request.files['audio_data']
@@ -65,6 +65,17 @@ def save():
         return render_template('index.html', request="POST")
     else:
          return render_template("index.html")
+
+
+@app.route('/guardar-archivo', methods=['POST'])
+def guardar_archivo():
+    file = request.files['archivo']
+    file.save(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], 'tmp.wav'))
+
+    # Devolver la URL del archivo cargado
+    url = request.host_url + 'static/uploads/tmp.wav'
+    return jsonify({'url': url})
+
 
 @app.route('/spec', methods = ['GET','POST'])
 def spec():

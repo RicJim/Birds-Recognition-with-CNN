@@ -1,5 +1,39 @@
 //Change imagen
-let image = document.getElementById('image');
+let cargar = document.getElementById('load');
+cargar.addEventListener('click', cargarArchivo);
+
+function cargarArchivo() {
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.wav';
+    input.onchange = function (event) {
+    var archivo = event.target.files[0];
+    var nombreArchivo = 'tmp.wav';
+
+    var formData = new FormData();
+    formData.append('archivo', archivo, nombreArchivo);
+
+    fetch('/guardar-archivo', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        var audiosCargadosDiv = document.getElementById('audios-cargados');
+        var audioElement = document.createElement('audio');
+        audioElement.src = data.url;
+        audioElement.controls = true;
+
+        audiosCargadosDiv.appendChild(audioElement);
+    })
+    .catch(error => console.error('Error:', error));
+    };
+
+    input.click();
+}
+  
+
+/*let image = document.getElementById('image');
 let imageName = document.getElementById('imageName');
 
 let json = [];
@@ -31,6 +65,7 @@ function changeImage(direccion) {
 }
 
 LoadJson();
+*/
 
 //Navbar button collapse
 $(document).ready(function(){
