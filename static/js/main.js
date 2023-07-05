@@ -63,17 +63,27 @@ function createDownloadLink(blob) {
     //up.hidden = true;
 
     up.addEventListener("click", function (event) {
+        event.preventDefault();
         var xhr = new XMLHttpRequest();
         let fd = new FormData();
         fd.append("audio_data", blob, filename);
         xhr.open("POST", "/save", true);
         xhr.send(fd);
+        clearBirdImageAndName();
     })
-    up.click()
+
     li.classList.add('text-center', 'py-1')
     li.appendChild(document.createTextNode(" "))
     li.appendChild(up)
+
+    var recordingsList = document.getElementById('recordingsList');
+    if (recordingsList.childElementCount >= 2) {
+        recordingsList.removeChild(recordingsList.firstChild);
+    }
+    
     recordingsList.appendChild(li);
+    
+    up.click()
 }
 
 function spectogramConvert() {
@@ -100,16 +110,15 @@ function birdIMG(birdName) {
         .then(data => {
             var birdList;
             birdList = data;
-            var image = document.querySelector('.aspect-ratio-container img');
-            var imageName = document.querySelector('#imageName span');
+            var image = document.getElementById('image');
+            var imageName = document.getElementById('imageName');
             var defaultImage = "https://cdn.pixabay.com/photo/2013/07/12/16/24/alphabet-150831_640.png";
             for (var i = 0; i < birdList.birds.length; i++) {
                 var bird = birdList.birds[i];
-                console.log(bird.Title)
                 if (birdName === 'Desconocido') {
                     image.src = defaultImage;
                     imageName.innerHTML = birdName;
-                    Break
+                    break;
                 } else if (birdName === bird.Title) {
                     if (bird.Poster !== "") {
                         image.src = bird.Poster;
@@ -126,3 +135,11 @@ function birdIMG(birdName) {
         });
 }
 
+function clearBirdImageAndName() {
+    let imageElement = document.getElementById("image");
+    let imageNameElement = document.getElementById("imageName");
+
+    //Limpiar la imagen y el nombre
+    imageElement.src = "";
+    imageNameElement.innerText = "";
+}

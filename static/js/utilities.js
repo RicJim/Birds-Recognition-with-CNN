@@ -12,6 +12,7 @@ function cargarArchivo() {
 
     var formData = new FormData();
     formData.append('archivo', archivo, nombreArchivo);
+    clearBirdImageAndName();
 
     fetch('/guardar-archivo', {
         method: 'POST',
