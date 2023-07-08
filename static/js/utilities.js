@@ -7,32 +7,32 @@ function cargarArchivo() {
     input.type = 'file';
     input.accept = '.wav';
     input.onchange = function (event) {
-    var archivo = event.target.files[0];
-    var nombreArchivo = 'tmp.wav';
+        var archivo = event.target.files[0];
+        var nombreArchivo = 'tmp.wav';
 
-    var formData = new FormData();
-    formData.append('archivo', archivo, nombreArchivo);
-    clearBirdImageAndName();
+        var formData = new FormData();
+        formData.append('archivo', archivo, nombreArchivo);
+        clearBirdImageAndName();
 
-    fetch('/guardar-archivo', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        var audiosCargadosDiv = document.getElementById('audios-cargados');
-        var audioElement = document.createElement('audio');
-        audioElement.src = data.url;
-        audioElement.controls = true;
+        fetch('/guardar-archivo', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            var audiosCargadosDiv = document.getElementById('audios-cargados');
+            var audioElement = document.createElement('audio');
+            audioElement.src = data.url + "?cache=" + Date.now();
+            audioElement.controls = true;
 
-        var LoadList = document.getElementById('audios-cargados');
-        if (LoadList.childElementCount >= 2) {
-            LoadList.removeChild(LoadList.firstChild);
-        }
+            if (audiosCargadosDiv.childElementCount >= 1) {
+                audiosCargadosDiv.removeChild(audiosCargadosDiv.firstChild);
+            }
 
-        audiosCargadosDiv.appendChild(audioElement);
-    })
-    .catch(error => console.error('Error:', error));
+            audiosCargadosDiv.appendChild(audioElement);
+            audioElement.play();
+        })
+        .catch(error => console.error('Error:', error));
     };
 
     input.click();

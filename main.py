@@ -69,6 +69,10 @@ def save():
 
 @app.route('/guardar-archivo', methods=['POST'])
 def guardar_archivo():
+    lastfile = os.path.join(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], 'tmp.wav'))
+    if os.path.exists(lastfile):
+        os.remove(lastfile)
+
     file = request.files['archivo']
     file.save(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], 'tmp.wav'))
 
