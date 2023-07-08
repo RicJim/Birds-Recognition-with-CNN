@@ -25,6 +25,11 @@ function cargarArchivo() {
         audioElement.src = data.url;
         audioElement.controls = true;
 
+        var LoadList = document.getElementById('audios-cargados');
+        if (LoadList.childElementCount >= 2) {
+            LoadList.removeChild(LoadList.firstChild);
+        }
+
         audiosCargadosDiv.appendChild(audioElement);
     })
     .catch(error => console.error('Error:', error));
@@ -34,7 +39,9 @@ function cargarArchivo() {
 }
   
 
-/*let image = document.getElementById('image');
+/*
+//Para cambiar la imagen (Descartado)
+let image = document.getElementById('image');
 let imageName = document.getElementById('imageName');
 
 let json = [];
