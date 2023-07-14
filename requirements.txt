@@ -59,3 +59,4 @@ typing_extensions==4.6.2
 urllib3==1.26.16
 Werkzeug==2.3.4
 wrapt==1.14.1
+typing_extensions
