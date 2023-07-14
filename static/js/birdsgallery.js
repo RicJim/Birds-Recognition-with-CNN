@@ -1,3 +1,11 @@
+//Navbar button collapse
+$(document).ready(function(){
+    $('.navbar-toggler').on('click', function(){
+        var target = $(this).data('target');
+        $(target).collapse('toggle');
+    });
+});
+
 function LoadJson() {
     fetch('static/uploads/main.json')
         .then(response => response.json())
