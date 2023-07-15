@@ -16,8 +16,6 @@ RATE = 44100
 NFFT = 2048 #SIZE FFT
 HOPL = 320 #Step between windows
 MEL = 128
-out = ruta + '/tmp.npy'
-out2 = ruta + '/tmp.png'
 
 #File Upload
 APP_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -30,16 +28,6 @@ label = ["Actitis macularius - Playero coleador", "Amazona Oratrix - Loro rey", 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = ruta
-
-model = None
-#Load Model
-def load_model():
-    json_file = open('models/model.json','r')
-    model_json = json_file.read()
-    json_file.close()
-    global model
-    model = model_from_json(model_json)
-    model.load_weights("models/modelW.h5")
 
 @app.route('/')
 def index():
@@ -66,7 +54,6 @@ def save():
     else:
          return render_template("index.html")
 
-
 @app.route('/guardar-archivo', methods=['POST'])
 def guardar_archivo():
     lastfile = os.path.join(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], 'tmp.wav'))
@@ -79,7 +66,6 @@ def guardar_archivo():
     # Devolver la URL del archivo cargado
     url = request.host_url + 'static/uploads/tmp.wav'
     return jsonify({'url': url})
-
 
 @app.route('/spec', methods = ['GET','POST'])
 def spec():
@@ -107,15 +93,6 @@ def spec():
         data_mel = np.expand_dims(data_mel, axis=0)
         data_mel = data_mel/255.0
 
-        #Guardar como imagen
-        #min_val = np.min(resized_Mel_spect_db)
-        #max_val = np.max(resized_Mel_spect_db)
-        #resized_Mel_spect_db = (resized_Mel_spect_db - min_val) / (max_val - min_val) * 255
-        #resized_Mel_spect_db = resized_Mel_spect_db.astype(np.uint8)
-
-        #image = ImageOps.invert(Image.fromarray(resized_Mel_spect_db)).convert('L')
-        #image.save(out2)  
-        
         #Predic
         array = model.predict(data_mel)
         resultado = np.round(array*100)
@@ -131,6 +108,16 @@ def spec():
         return birdName
     #Mel Spectrogram
     return None
+
+model = None
+#Load Model
+def load_model():
+    json_file = open('models/model.json','r')
+    model_json = json_file.read()
+    json_file.close()
+    global model
+    model = model_from_json(model_json)
+    model.load_weights("models/modelW.h5")
 
 if __name__ == '__main__':
     load_model()
