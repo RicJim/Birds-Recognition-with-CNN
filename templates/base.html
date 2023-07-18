@@ -53,6 +53,14 @@
     <footer class="footer">
         <p>© 2023 OVEX. Desarrollado por Victoria Ludeña y Ricardo Jiménez.</p>
     </footer> -->
-    <script src="{{ url_for('static', filename='js/utilities.js') }}"></script>
+    <script type="text/javascript">
+        //Navbar button collapse
+        $(document).ready(function(){
+            $('.navbar-toggler').on('click', function(){
+                var target = $(this).data('target');
+                $(target).collapse('toggle');
+            });
+        });
+    </script>
 </body>
 </html>

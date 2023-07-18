@@ -1,6 +1,10 @@
 body {
     background-color: #B2DFDB;
     color: black;
+    background-image: url('background.jpg');
+    background-size: 100% 150%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /*Estilos para el Navbar*/
