@@ -4,85 +4,127 @@
             "id": 0,
             "Name": "Playero coleador",
             "Title": "Actitis macularius - Playero coleador",
-            "Poster": "https://observation.org/media/photo/7435610.jpg"
+            "Poster": "https://observation.org/media/photo/7435610.jpg",
+            "Descripcion1": "El playero coleador es un pájaro pequeño, mide entre 18 y 20 cm y sus alas se extienden de 28 a 30 cm.",
+            "Descripcion2": "Tiene un cuerpo compacto, patas delgadas, pico recto y plumaje manchado de marrón en las partes superiores y blanco en las partes inferiores.",
+            "Audio": "https://xeno-canto.org/sounds/uploaded/ILUHRFXDNU/XC610099-Spotted%20Sandpiper%20calls%20San%20Pablo%20Etla%20Dic%2020%20900%20_1201.mp3"
         },
         {
             "id": 1,
             "Name": "Loro rey",
             "Title": "Amazona Oratrix - Loro rey",
-            "Poster": "https://avesexoticas.org/wp-content/uploads/2017/10/Loro-Baceza-Amarilla-Amazona-oratrix-1024x680.jpg"
+            "Poster": "https://avesexoticas.org/wp-content/uploads/2017/10/Loro-Baceza-Amarilla-Amazona-oratrix-1024x680.jpg",
+            "Descripcion1": "El loro rey, también conocido como Amazona oratrix, es un majestuoso ave de tamaño mediano, con una longitud promedio de 38 a 43 cm y una envergadura de alas que se extiende entre 50 y 60 cm.",
+            "Descripcion2": "Tiene un cuerpo compacto y esbelto, con plumaje vibrante que va desde el verde intenso en la parte superior hasta tonos rojos, naranjas y amarillos en la cabeza, cuello y pecho, y una cola azul brillante. Su apariencia es cautivadora y majestuosa.",
+            "Audio": ""
         },
         {
             "id": 2,
             "Name": "Perico barbinaranja",
             "Title": "Brotogeris jugularis - Perico barbinaranja",
-            "Poster": "https://live.staticflickr.com/65535/50259360443_2af4184cfe_b.jpg"
+            "Poster": "https://live.staticflickr.com/65535/50259360443_2af4184cfe_b.jpg",
+            "Descripcion1": "El perico barbinaranja, es un encantador pájaro de tamaño pequeño, que mide alrededor de 18 a 20 cm y tiene una envergadura de alas de 28 a 30 cm.",
+            "Descripcion2": "Es un pájaro pequeño y ágil con un cuerpo compacto. Tiene patas delgadas, un pico recto y plumaje que combina manchas verdes en la espalda con un color naranja intenso en la garganta. En la parte de abajo, tiene plumas suaves de color amarillo.",
+            "Audio": ""
         },
         {
             "id": 3,
             "Name": "Paloma domestica",
             "Title": "Columba livia - Paloma domestica",
-            "Poster": "https://static.inaturalist.org/photos/153453195/large.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2017/09/08/03/50/homing-pigeon-2727563_960_720.jpg",
+            "Descripcion1": "La paloma doméstica, es un ave común que se encuentra en muchas ciudades. Tiene un tamaño mediano, con una longitud promedio de alrededor de 30 cm y una envergadura de alas de aproximadamente 60 cm.",
+            "Descripcion2": "Es un ave con un cuerpo de tamaño mediano, patas cortas y un pico recto. Su plumaje es de colores grises y blancos, con un brillo suave. Estas palomas son muy sociables y se adaptan bien a la vida en la ciudad, por lo que es común verlas en parques, plazas y tejados.",
+            "Audio": ""
         },
         {
             "id": 4,
             "Name": "Garrapatero piquiliso",
             "Title": "Crotophaga ani - Garrapatero piquiliso",
-            "Poster": "https://live.staticflickr.com/754/22166522421_f4798d8fef_b.jpg"
+            "Poster": "https://live.staticflickr.com/754/22166522421_f4798d8fef_b.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 5,
             "Name": "Águila arpía",
             "Title": "Harpia harpyja - Águila arpía",
-            "Poster": "https://cdn.pixabay.com/photo/2018/06/06/13/46/harpy-3457952_960_720.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2018/06/06/13/46/harpy-3457952_960_720.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 6,
             "Name": "Burrito cuyano",
             "Title": "Laterallus Jamaicensis - Burrito cuyano",
-            "Poster": "https://live.staticflickr.com/8456/8057403223_6eee4762b3_b.jpg"
+            "Poster": "https://live.staticflickr.com/8456/8057403223_6eee4762b3_b.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 7,
             "Name": "Águila pescadora",
             "Title": "Pandion haliaetus - Águila pescadora",
-            "Poster": "https://cdn.pixabay.com/photo/2012/11/28/13/53/osprey-67786_1280.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2012/11/28/13/53/osprey-67786_1280.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 8,
             "Name": "Bienteveo Grande",
             "Title": "Pitangus sulphuratus - Bienteveo grande",
-            "Poster": "https://cdn.pixabay.com/photo/2023/01/21/05/07/bird-7733009_1280.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2023/01/21/05/07/bird-7733009_1280.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 9,
             "Name": "Tangara dorsirroja",
             "Title": "Ramphocelus dimidiatus - Tangara dorsirroja",
-            "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/99/Crimson-backed_Tanager_-_Panama_H8O8413_%2822954596730%29.jpg"
+            "Poster": "https://upload.wikimedia.org/wikipedia/commons/9/99/Crimson-backed_Tanager_-_Panama_H8O8413_%2822954596730%29.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 10,
             "Name": "Tangara azuleja",
             "Title": "Thraupis episcopus - Tangara azuleja",
-            "Poster": "https://cdn.pixabay.com/photo/2023/02/15/04/15/bird-7790884_1280.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2023/02/15/04/15/bird-7790884_1280.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 11,
             "Name": "Espatulilla común",
             "Title": "Todirostrum cinereum - Espatulilla común",
-            "Poster": "https://i0.wp.com/birdscolombia.com/wp-content/uploads/2017/02/todirostrum-cinereum11.jpg?resize=1180%2C787&ssl=1"
+            "Poster": "https://i0.wp.com/birdscolombia.com/wp-content/uploads/2017/02/todirostrum-cinereum11.jpg?resize=1180%2C787&ssl=1",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 12,
             "Name": "Sotorrey común",
             "Title": "Troglodytes aedon - Sotorrey común",
-            "Poster": "https://cdn.pixabay.com/photo/2019/06/29/22/08/troglodytes-aedon-4306988_1280.jpg"
+            "Poster": "https://cdn.pixabay.com/photo/2019/06/29/22/08/troglodytes-aedon-4306988_1280.jpg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         },
         {
             "id": 13,
             "Name": "Zorzal pardo",
             "Title": "Turdus grayi - Zorzal pardo",
-            "Poster": "https://inaturalist-open-data.s3.amazonaws.com/photos/109441828/large.jpeg"
+            "Poster": "https://inaturalist-open-data.s3.amazonaws.com/photos/109441828/large.jpeg",
+            "Descripcion1": "",
+            "Descripcion2": "",
+            "Audio": ""
         }
     ]    
 }

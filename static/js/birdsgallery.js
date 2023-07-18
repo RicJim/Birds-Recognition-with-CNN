@@ -64,13 +64,22 @@ function showOverlay(name) {
     const overlay = $('#overlay');
     const overlayImage = $('#overlay-image');
     const overlayTitle = $('#overlay-title');
+    const overlayDes1 = $('#overlay-des1');
+    const overlayDes2 = $('#overlay-des2');
+    const overlayAudio = $('#overlay-audio');
     
     const birdData = json.find(item => item.Name === name);
     const imageSrc = birdData.Poster;
     const title = birdData.Title;
+    const des1 = birdData.Descripcion1;
+    const des2 = birdData.Descripcion2;
+    const audioSrc = birdData.Audio;
 
     overlayImage.attr('src', imageSrc);
     overlayTitle.text(title);
+    overlayDes1.text(des1);
+    overlayDes2.text(des2);
+    overlayAudio.html(`<audio controls><source src="${audioSrc}" type="audio/mpeg"></audio>`)
 
     overlay.fadeIn();
 
