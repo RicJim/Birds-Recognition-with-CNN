@@ -9,7 +9,7 @@ from PIL import Image
 ruta = 'static/uploads'
 
 #audio file
-file_path = ruta + '/tmp.wav'
+file_path = os.path.join(ruta, 'tmp.wav')
 
 #Mel Spectogram parameters
 RATE = 44100
@@ -69,7 +69,7 @@ def guardar_archivo():
 
 @app.route('/spec', methods = ['GET','POST'])
 def spec():
-    if request.method == 'POST':
+    if request.method == 'POST' and model is not None:
         #Audio capture and sampling
         y, sr = lb.load(file_path, sr=RATE)
 
@@ -110,14 +110,20 @@ def spec():
     return None
 
 model = None
+model_path = os.path.join('models', 'model.json')
+weights_path = os.path.join('models', 'modelW.h5')
 #Load Model
 def load_model():
-    json_file = open('models/model.json','r')
-    model_json = json_file.read()
-    json_file.close()
+    #json_file = open('models/model.json','r')
+    #model_json = json_file.read()
+    #json_file.close()
+
+    with open(model_path, 'r') as json_file:
+        model_json = json_file.read()
+
     global model
     model = model_from_json(model_json)
-    model.load_weights("models/modelW.h5")
+    model.load_weights(weights_path)
 
 if __name__ == '__main__':
     load_model()
