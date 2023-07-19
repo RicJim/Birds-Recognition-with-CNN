@@ -107,7 +107,7 @@ def spec():
 
         return birdName
     #Mel Spectrogram
-    return None
+    return 'Desconocido'
 
 model = None
 model_path = os.path.join('models', 'model.json')
