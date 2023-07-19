@@ -110,8 +110,8 @@ def spec():
     return 'Desconocido'
 
 model = None
-model_path = os.path.join('models', 'model.json')
-weights_path = os.path.join('models', 'modelW.h5')
+model_path = os.path.join(APP_ROOT, 'models', 'model.json')
+weights_path = os.path.join(APP_ROOT, 'models', 'modelW.h5')
 #Load Model
 def load_model():
     #json_file = open('models/model.json','r')
@@ -121,9 +121,12 @@ def load_model():
     with open(model_path, 'r') as json_file:
         model_json = json_file.read()
 
+    print('Model JSON:', model_json)
+
     global model
     model = model_from_json(model_json)
     model.load_weights(weights_path)
+    print('Modelo cargado correctamente.')
 
 if __name__ == '__main__':
     load_model()
