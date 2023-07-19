@@ -31,6 +31,8 @@ app.config['UPLOAD_FOLDER'] = ruta
 
 @app.route('/')
 def index():
+    if model is None:
+        load_model()
     return render_template('index.html')
 
 @app.route('/catalogo')
@@ -65,6 +67,7 @@ def guardar_archivo():
 
     # Devolver la URL del archivo cargado
     url = request.host_url + 'static/uploads/tmp.wav'
+    print(url)
     return jsonify({'url': url})
 
 @app.route('/spec', methods = ['GET','POST'])
@@ -121,8 +124,6 @@ def load_model():
     with open(model_path, 'r') as json_file:
         model_json = json_file.read()
 
-    print('Model JSON:', model_json)
-
     global model
     model = model_from_json(model_json)
     model.load_weights(weights_path)
@@ -130,4 +131,5 @@ def load_model():
 
 if __name__ == '__main__':
     load_model()
-    app.run(host='0.0.0.0', debug=True, port=os.getenv("PORT", default=5000), threaded=True)
+    #app.run(host='0.0.0.0', debug=True, port=os.getenv("PORT", default=5000), threaded=True)
+    app.run(port=os.getenv("PORT", default=5000))
