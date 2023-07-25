@@ -5,6 +5,7 @@ from keras.models import model_from_json
 import librosa as lb
 import os
 from PIL import Image
+#Probando
 
 ruta = 'static/uploads'
 
