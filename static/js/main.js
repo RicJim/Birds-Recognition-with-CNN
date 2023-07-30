@@ -25,13 +25,14 @@ function recording() {
             rec = new Recorder(input, { numChannels: 1 })
 
             rec.record();
-            alert('Se esta grabando...')
+            const lightContainer = document.querySelector('.light');
+            lightContainer.classList.add('recording')
             setTimeout(() => {
                 btnpredic.disabled = false;
+                lightContainer.classList.remove('recording');
                 rec.stop();
                 gumStream.getAudioTracks()[0].stop();
                 rec.exportWAV(createDownloadLink);
-                alert('Grabacion terminada...')
             }, 10000);
         })
         .catch(function (err) {

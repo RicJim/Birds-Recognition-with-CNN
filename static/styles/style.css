@@ -2,9 +2,11 @@ body {
     background-color: #B2DFDB;
     color: black;
     background-image: url('background.jpg');
-    background-size: 100% 150%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 /*Estilos para el Navbar*/
@@ -175,3 +177,75 @@ body {
     }
 }
 
+
+/* Record Status */
+.light {
+    position: relative;
+    width: 250px;
+    height: 20px;
+    margin: 50px auto;
+}
+
+.record-text {
+    opacity: 0;
+    bottom: 50%;
+    position: absolute;
+    left: 40px;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    transform: translateY(50%);
+}
+
+.recording .record-text {
+    opacity: 1;
+}
+
+.record-status {
+    position: absolute;
+    bottom: 50%;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    opacity: 0;
+}
+
+.recording .record-status {
+    opacity: 1;
+    animation: blinking 1s infinite;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Resaltar texto */
+.highlight-text {
+    font-size: 3rem; /* Tamaño de fuente más grande */
+    padding: 10px 20px; /* Agregar un poco de relleno para resaltar más */
+    background-color: rgba(255, 255, 255, 0.489);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Agregar una sombra */
+    letter-spacing: 2px; /* Ajustar el espaciado entre letras */
+    font-weight: bolder;
+}
+
+/* Resaltar texto para h4 */
+h4.highlight-text {
+    font-size: 1.5rem;
+    vertical-align: top;
+    line-height: 1;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-weight: 500;
+}

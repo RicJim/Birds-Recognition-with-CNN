@@ -131,5 +131,5 @@ def load_model():
 
 if __name__ == '__main__':
     load_model()
-    #app.run(host='0.0.0.0', debug=True, port=os.getenv("PORT", default=5000), threaded=True)
+    #app.run(debug=True, port=os.getenv("PORT", default=5000))
     app.run(port=os.getenv("PORT", default=5000))
